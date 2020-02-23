@@ -1,0 +1,413 @@
+//#https://nikopaied.xyz/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panel</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="2ff23fd6cfab6747d0bbf8f8-text/javascript"></script>
+    <script src="bootstrap.js" type="2ff23fd6cfab6747d0bbf8f8-text/javascript"></script>
+</head>
+<body>
+
+
+    <nav id="navbarCreds" class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <a href="#" class="navbar-brand"><img src="twitch.png" style="height: 45px;" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/">Panel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://discord.gg/wjRMCvz">Discord</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto mt-2">
+                <li class="nav-item">
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <!-- 1 2 3 4 id -->
+    <div class="container">
+        <div id="1" class="justify-content-center my-5 mx-auto" style="width: 250px; background-color: black;"> <button class="btn btn-primary btn-lg" style="width: 250px;" disabled>Following</button></div>
+        <div id="2" class="justify-content-center my-5 mx-auto" style="width: 250px; background-color: black;"> <button class="btn btn-primary btn-lg" style="width: 250px;" disabled>Clip views</button></div>
+        <div id="3" class="justify-content-center my-5 mx-auto" style="width: 250px; background-color: black;"> <button class="btn btn-primary btn-lg" style="width: 250px;" disabled>Friends requests</button></div>
+        <div id="4" class="justify-content-center my-5 mx-auto" style="width: 250px; background-color: black;"> <button class="btn btn-primary btn-lg" style="width: 250px;" disabled>MORE coming soon...</button></div>
+    </div>
+    <br>
+    
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Are you sure ?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="runConfirmation1">
+              <label for="" id="priceAlert">This will cost you NOTHING! </label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" id="runConfirmation" data-dismiss="modal" class="btn btn-primary">RUN!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    <script type="2ff23fd6cfab6747d0bbf8f8-text/javascript">
+        $("#1").click(function() {
+            $("#2").fadeOut();
+            $("#1").fadeOut();
+            $("#3").fadeOut();
+            $("#4").fadeOut();
+
+
+            setTimeout(function(){
+            var inputBox = document.createElement("input");
+            inputBox.className = "form-control justify-content-center my-5 mx-auto";
+            inputBox.id = "inputTextBox";
+            inputBox.style = "width:250px;";
+            inputBox.setAttribute("placeholder","twitch username here");
+            var bombLabel = document.createElement("h4");
+            bombLabel.innerHTML = "Followers botting";
+            bombLabel.id = "FollowBombing";
+            bombLabel.style = "color:white;text-align:center;";
+            var labelWarning = document.createElement("h3");
+            labelWarning.innerHTML = "Max 1k per task";
+            labelWarning.id = "warningLabel";
+            labelWarning.style = "color:white;text-align: center;";
+            labelWarning.className = "my-5";
+            var tokensAmountTextBox = document.createElement("input");
+            tokensAmountTextBox.setAttribute("placeholder","amount of followers here ")
+            tokensAmountTextBox.style = "width:250px;";
+            tokensAmountTextBox.id = "tokensAmountTextBox";
+            tokensAmountTextBox.className = "form-control justify-content-center my-5 mx-auto";
+            tokensAmountTextBox.type = "number";
+            var firstPool = document.createElement("option");
+            firstPool.text = "100 tokens";
+            firstPool.style = "color:black;";
+            var secondPool = document.createElement("option");
+            secondPool.text = "500 tokens";
+            secondPool.style = "color:black;"
+            var launchFriendsBtn = document.createElement("button");
+            launchFriendsBtn.innerHTML = "Run";
+            launchFriendsBtn.className = "btn btn-primary btn-lg";
+            launchFriendsBtn.id = "runBtn";
+            launchFriendsBtn.setAttribute("data-toggle","modal");
+            launchFriendsBtn.setAttribute("data-target","#exampleModal");
+            var centerElement = document.createElement("center");
+            var backBtn = document.createElement("button");
+            backBtn.innerHTML = "Back";
+            backBtn.className = "btn btn-primary btn-lg";
+            backBtn.id = "back";
+            centerElement.append(launchFriendsBtn);
+            document.body.append(bombLabel);
+            document.body.append(inputBox);
+            document.body.append(tokensAmountTextBox);
+            document.body.append(labelWarning);
+            document.body.append(centerElement);
+            document.body.append(backBtn);
+
+            var launchBtn = document.getElementById("runBtn").addEventListener("click", function(){
+            var tokensCounter = document.getElementById("tokensAmountTextBox").value;
+            var attackTypeSearched;
+        // we need to evaluate which attacktype it is
+        if(document.getElementById("FollowBombing")){
+            attackTypeSearched = 1;
+        }    
+        // now how many tokens we want to use
+
+        })
+
+
+        }, 1000);
+
+
+        document.getElementById("runConfirmation").addEventListener("click", function(){
+           fetch("/api/taskLaunch", {
+               method:"POST",
+               body:JSON.stringify({AttackType:1,tokensAmount:document.getElementById("tokensAmountTextBox").value, username:document.getElementById("inputTextBox").value}),
+               headers:{
+                   "Content-Type": "application/json"
+               }
+           }).then(function(response){
+                document.getElementById("tokensAmountTextBox").value = "";
+                document.getElementById("inputTextBox").value = "";
+               if(response.status == 200){ // gucci gang shit
+                    var alert = document.createElement("div");
+                    alert.className = "alert alert-success";
+                    alert.setAttribute("role","alert");
+                    alert.innerHTML = "Task has been launched!";
+                    alert.style = "position: absolute;top: 70%;left: 50%;transform: translate(-50%,-50%); width: 250px; height: 70px;";
+                    document.body.append(alert);
+                    setTimeout(function(){
+                        alert.hidden = true;
+                    }, 3000);
+               }else if(response.status == 429){
+                var alert = document.createElement("div");
+                    alert.className = "alert alert-danger";
+                    alert.setAttribute("role","alert");
+                    alert.innerHTML = "cooldown, wait few mins.";
+                    alert.style = "position: absolute;top: 70%;left: 50%;transform: translate(-50%,-50%); width: 250px; height: 70px;";
+                    document.body.append(alert);
+                    setTimeout(function(){
+                        alert.hidden = true;
+                    }, 3000);
+               }else if(response.status == 667){
+                var alert = document.createElement("div");
+                    alert.className = "alert alert-danger";
+                    alert.setAttribute("role","alert");
+                    alert.innerHTML = "limit is 1000";
+                    alert.style = "position: absolute;top: 70%;left: 50%;transform: translate(-50%,-50%); width: 250px; height: 70px;";
+                    document.body.append(alert);
+                    setTimeout(function(){
+                        alert.hidden = true;
+                    }, 3000);
+               }
+               else{
+                var alert = document.createElement("div");
+                    alert.className = "alert alert-danger";
+                    alert.setAttribute("role","alert");
+                    alert.innerHTML = ">:( somehapp";
+                    alert.style = "position: absolute;top: 70%;left: 50%;transform: translate(-50%,-50%); width: 250px; height: 70px;";
+                    document.body.append(alert);
+                    setTimeout(function(){
+                        alert.hidden = true;
+                    }, 3000);
+               }
+           })
+        })
+        })
+
+
+
+        //
+        $("#2").click(function() {
+            $("#1").fadeOut();
+            $("#2").fadeOut();
+            $("#3").fadeOut();
+            $("#4").fadeOut();
+
+            // some script test
+            var someScript = document.createElement("script");
+            someScript.innerHTML = "var BtnLaunchTask = document.getElementById(\"runBtn\").addEventListener(\"click\", function(){ console.log(\"nigger\"); });";
+            // x d
+            setTimeout(function(){
+            var tokensAmountTextBox = document.createElement("input");
+            tokensAmountTextBox.setAttribute("placeholder","tokens amount")
+            tokensAmountTextBox.style = "width:250px;";
+            tokensAmountTextBox.id = "tokensAmountTextBox";
+            tokensAmountTextBox.className = "form-control justify-content-center my-5 mx-auto";
+            tokensAmountTextBox.type = "number";
+            var inputBox = document.createElement("input");
+            inputBox.className = "form-control justify-content-center my-5 mx-auto";
+            inputBox.id = "inputTextBox";
+            inputBox.style = "width:250px;";
+            inputBox.setAttribute("placeholder","clip link (full)");
+            var bombLabel = document.createElement("h4");
+            bombLabel.innerHTML = "Clip views";
+            bombLabel.id = "JoinServer";
+            bombLabel.style = "color:white;text-align:center;";
+            var launchFriendsBtn = document.createElement("button");
+            launchFriendsBtn.innerHTML = "Run";
+            launchFriendsBtn.className = "btn btn-primary btn-lg";
+            launchFriendsBtn.id = "runBtn";
+            var centerElement = document.createElement("center");
+            var backBtn = document.createElement("button");
+            backBtn.innerHTML = "Back";
+            backBtn.className = "btn btn-primary btn-lg";
+            backBtn.id = "back";
+            centerElement.append(launchFriendsBtn);
+            document.body.append(bombLabel);
+            document.body.append(inputBox);
+            document.body.append(tokensAmountTextBox);
+            document.body.append(centerElement);
+            document.body.append(backBtn);
+            document.body.append(someScript);
+            }, 1000);
+        })
+        $("#3").click(function() {
+            $("#1").fadeOut();
+            $("#3").fadeOut();
+            $("#2").fadeOut();
+            $("#4").fadeOut();
+
+            // some script test
+            var someScript = document.createElement("script");
+            someScript.innerHTML = "var BtnLaunchTask = document.getElementById(\"runBtn\").addEventListener(\"click\", function(){ console.log(\"nigger\"); });";
+            // x d
+            setTimeout(function(){
+            var inputBox = document.createElement("input");
+            inputBox.className = "form-control justify-content-center my-5 mx-auto";
+            inputBox.id = "inputTextBox";
+            inputBox.style = "width:250px;";
+            inputBox.setAttribute("placeholder","emoji verification api link");
+            var bombLabel = document.createElement("h4");
+            bombLabel.innerHTML = "Friends requests";
+            bombLabel.id = "EmojiVerif";
+            bombLabel.style = "color:white;text-align:center;";
+            var poolTokenSelector = document.createElement("select");
+            poolTokenSelector.className = "form-control form-control-sm justify-content-center my-5 mx-auto";
+            poolTokenSelector.id = "inlineFormCustomSelectPref";
+            poolTokenSelector.style = "width:250px;";
+            var firstPool = document.createElement("option");
+            firstPool.text = "100 tokens";
+            firstPool.style = "color:black;";
+            var secondPool = document.createElement("option");
+            secondPool.text = "500 tokens";
+            secondPool.style = "color:black;"
+            var launchFriendsBtn = document.createElement("button");
+            launchFriendsBtn.innerHTML = "Run";
+            launchFriendsBtn.className = "btn btn-primary btn-lg";
+            launchFriendsBtn.id = "runBtn";
+            var centerElement = document.createElement("center");
+            var backBtn = document.createElement("button");
+            backBtn.innerHTML = "Back";
+            backBtn.className = "btn btn-primary btn-lg";
+            backBtn.id = "back";
+            centerElement.append(launchFriendsBtn);
+            document.body.append(bombLabel);
+            document.body.append(inputBox);
+            poolTokenSelector.append(firstPool);
+            poolTokenSelector.append(secondPool);
+            document.body.append(poolTokenSelector);
+            document.body.append(centerElement);
+            document.body.append(backBtn);
+            document.body.append(someScript);
+
+
+            }, 1000);
+        })
+        $("#4").click(function() {
+            $("#1").fadeOut();
+            $("#4").fadeOut();
+            $("#2").fadeOut();
+            $("#3").fadeOut();
+
+            // some script test
+            var someScript = document.createElement("script");
+            someScript.innerHTML = "var BtnLaunchTask = document.getElementById(\"runBtn\").addEventListener(\"click\", function(){ console.log(\"nigger\"); });";
+            // x d
+            setTimeout(function(){
+            var inputBox = document.createElement("input");
+            inputBox.className = "form-control justify-content-center my-5 mx-auto";
+            inputBox.id = "inputTextBox";
+            inputBox.style = "width:250px;";
+            inputBox.setAttribute("placeholder","server-dev-Id");
+            //
+            var inputBox2 = document.createElement("input");
+            inputBox2.className = "form-control justify-content-center my-5 mx-auto";
+            inputBox2.id = "inputTextBox2";
+            inputBox2.style = "width:250px;";
+            inputBox2.setAttribute("placeholder","message");
+
+            var bombLabel = document.createElement("h4");
+            bombLabel.innerHTML = "Channel message spammer";
+            bombLabel.id = "MsgSpammer";
+            bombLabel.style = "color:white;text-align:center;";
+            var poolTokenSelector = document.createElement("select");
+            poolTokenSelector.className = "form-control form-control-sm justify-content-center my-5 mx-auto";
+            poolTokenSelector.id = "inlineFormCustomSelectPref";
+            poolTokenSelector.style = "width:250px;";
+            var firstPool = document.createElement("option");
+            firstPool.text = "100 tokens";
+            firstPool.style = "color:black;";
+            var secondPool = document.createElement("option");
+            secondPool.text = "500 tokens";
+            secondPool.style = "color:black;"
+            var launchFriendsBtn = document.createElement("button");
+            launchFriendsBtn.innerHTML = "Run";
+            launchFriendsBtn.className = "btn btn-primary btn-lg";
+            launchFriendsBtn.id = "runBtn";
+            var centerElement = document.createElement("center");
+            var backBtn = document.createElement("button");
+            backBtn.innerHTML = "Back";
+            backBtn.className = "btn btn-primary btn-lg";
+            backBtn.id = "back";
+            centerElement.append(launchFriendsBtn);
+            document.body.append(bombLabel);
+            document.body.append(inputBox);
+            document.body.append(inputBox2);
+            poolTokenSelector.append(firstPool);
+            poolTokenSelector.append(secondPool);
+            document.body.append(poolTokenSelector);
+            document.body.append(centerElement);
+            document.body.append(backBtn);
+            document.body.append(someScript);
+
+            }, 1000);
+        })
+
+    </script>
+
+    <script type="2ff23fd6cfab6747d0bbf8f8-text/javascript">
+         document.addEventListener('click',function(e){
+            if(e.target && e.target.id == "back"){
+            $("#1").show(1000);
+            $("#2").show(1000);
+            $("#3").show(1000);
+            $("#4").show(1000);
+            while(document.body.contains(document.getElementById("inputTextBox"))){
+                document.getElementById("inputTextBox").remove();
+            }
+            while(document.body.contains(document.getElementById("inputTextBox2"))){
+                document.getElementById("inputTextBox2").remove();
+            }
+            while(document.body.contains(document.getElementById("FollowBombing"))){
+                document.getElementById("FollowBombing").remove();
+            }
+            while(document.body.contains(document.getElementById("EmojiVerif"))){
+                document.getElementById("EmojiVerif").remove();
+            }
+            while(document.body.contains(document.getElementById("MsgSpammer"))){
+                document.getElementById("MsgSpammer").remove();
+            }
+            while(document.body.contains(document.getElementById("JoinServer"))){
+                document.getElementById("JoinServer").remove();
+            }
+            while(document.body.contains(document.getElementById("inlineFormCustomSelectPref"))){
+                document.getElementById("inlineFormCustomSelectPref").remove();
+            }
+            while(document.body.contains(document.getElementById("runBtn"))){
+                document.getElementById("runBtn").remove();
+            }
+            
+            while(document.body.contains(document.getElementById("back"))){
+                document.getElementById("back").remove();
+            }
+
+            while(document.body.contains(document.getElementById("tokensAmountTextBox"))){
+                document.getElementById("tokensAmountTextBox").remove();
+            }
+
+            // warningLabel
+
+            while(document.body.contains(document.getElementById("warningLabel"))){
+                document.getElementById("warningLabel").remove();
+            }
+        }
+        });
+    </script>
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="2ff23fd6cfab6747d0bbf8f8-|49" defer=""></script></body>
+</html>
