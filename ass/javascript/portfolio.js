@@ -15,7 +15,7 @@
             var links = [
 
 			          {
-                    name: 'conpatto',
+                    name: 'Rzy',
                     link: 'https://discord.gg/SCpYRVY'
                 },
               
@@ -23,21 +23,12 @@
                     name: 'discord',
                     link: 'https://discord.gg/NAXjUEC'
                 },
-              
-                {
-                    name: 'twitter',
-                    link: 'https://twitter.com/mithianme'
-                },
-              
+                            
                 {
                     name: 'instagram',
-                    link: 'https://instagram.com/mithianme'
+                    link: 'https://instagram.com/menderlxrd'
                 },
                 
-                {
-                    name: 'mithian',
-                    link: 'https://steamcommunity.com/profiles/76561198854459477'
-                }
               
             ];
          
@@ -51,7 +42,7 @@
                 link = $('#marquee').children('a').last();
                 
                 if (i != links.length - 1) 
-                    $('#marquee').append(' <img class="emoticon" src="assets/others/mgh_17.png"> ');
+                    $('#marquee').append(' <img class="emoticon" src="ass/others/mgh_17.png"> ');
 
             }
 
@@ -59,7 +50,7 @@
             {
                 $("#brand").replaceWith('<span id="brand" style="margin-left:0.3pc;"></span>');
 
-                $("#background").replaceWith('<div id="background" style="background-image: url(https://obnoxious.club/assets/images/mobile-background.jpg);"></div>');
+                $("#background").replaceWith('<div id="background" style="background-image: url(https://obnoxious.club/ass/images/mobile-background.jpg);"></div>');
 
                 $("#audio").remove();
 
@@ -69,12 +60,12 @@
             {
             app.titleChanger();
             app.iconChanger([
-                "assets/icons/roses/rose1.jpg", 
-                "assets/icons/roses/rose2.jpg", 
-                "assets/icons/roses/rose3.jpg", 
-                "assets/icons/roses/rose4.jpg", 
-                "assets/icons/roses/rose5.jpg", 
-                "assets/icons/roses/rose1.jpg", 
+                "ass/icons/roses/rose1.jpg", 
+                "ass/icons/roses/rose2.jpg", 
+                "ass/icons/roses/rose3.jpg", 
+                "ass/icons/roses/rose4.jpg", 
+                "ass/icons/roses/rose5.jpg", 
+                "ass/icons/roses/rose1.jpg", 
             ]);
             }
 
@@ -128,7 +119,7 @@
         $('html').on('contextmenu', function (event) {
 
             var img = document.createElement("img");
-            img.src = "assets/others/trollface.jpg"; 
+            img.src = "ass/others/trollface.jpg"; 
             img.width = 64;
             img.height = 64;
             img.alt = "obnoxious.club";
@@ -195,7 +186,7 @@
 
                         clearCursor();
 
-                        writeLine(["<i style='color: #F62459'>mithian.xyz $$$</i>"], 120, 500, function () {
+                        writeLine(["<i style='color: #F62459'>enderlxrd.tk $$$</i>"], 120, 500, function () {
 
                             timeouts.push(setTimeout(function () {
 
