@@ -15,21 +15,20 @@ var _app = function ()
         "$$$~",
         "",
         "Social Media(s)",
-        "Instagram : @mithianme",
-        "Twitter : @mithianme",
-        "YouTube : Mithian",
-        "Discord : mithian#2563",
+        "Instagram : @enderlxrd",
+        "YouTube : Enderlxrd",
+        "Discord : RzyReturns#4408",
         "",
         "$$$~",
         "",
         "social engineer",
         "reverse engineer",
         "java script developer",
-        "triple 6 $$~",
+        "nigga",
         "",
         "$$$~",
         "",
-        "conpatto is my biological sister",
+        "coconut",
         "AK47 up in this bitch... ︻╦╤─",
         "Chat shit get swatted",
         "",
@@ -42,7 +41,7 @@ var _app = function ()
     this.titleChanger = function (text, delay)
     {
         text = text ||
-            ['conpatto#2005', 'mithian', '=', 'mithian.xyz'];
+            ['RzyReturns#4408', 'RzyReturns', '=', 'enderlxrd.tk'];
         delay = delay || 2000;
 
         var counter = 0;
